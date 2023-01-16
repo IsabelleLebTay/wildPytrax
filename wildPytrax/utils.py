@@ -6,6 +6,17 @@ import requests
 import os
 
 def wt_authorization():
+    """Login credential authorization
+
+    Params:
+    -----
+
+    Usage:
+    >>
+    >>
+    
+    
+    """
     cid = id
     request = requests.post(
         url = "https://abmi.auth0.com/oauth/token",
