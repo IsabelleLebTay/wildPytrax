@@ -1,4 +1,4 @@
-# wildPytrax 
+# wildPytrax - *under construction*
 A series of functions for environmental sensor data management to and from Wildtrax
 
 #### Purpose of the package
@@ -9,7 +9,7 @@ A series of functions for environmental sensor data management to and from Wildt
 
 ### Getting started
 #### Installation
-Not valid yet.
+*Not valid yet.*
 ```bash
 pip install wildPytrax
 ```
