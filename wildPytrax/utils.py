@@ -1,12 +1,13 @@
 # Internal functions
 
-# Wildtrax authentification
-
 import requests
 import os
 import datetime as dt
 
 def _wt_authorization():
+    """Wildtrax access token
+
+    """
 
     bytelist = ['0x45', '0x67', '0x32', '0x4d', '0x50', '0x56', '0x74', '0x71', '0x6b',
              '0x66', '0x33', '0x53', '0x75', '0x4b', '0x53', '0x35', '0x75', '0x58', '0x7a', '0x50',
@@ -28,11 +29,17 @@ def _wt_authorization():
 
     ## Add error messages here if authentication failed
 
+    ## If success, add message
+    print("Authentication into WildTrax successful.")
+
     # Time until token expires
     now = dt.datetime.now()
     expiry_time = now + dt.timedelta(seconds=token_details['expires_in'])
 
     return token_details
 
-_wt_authorization()
+
+def _wt_api_general():
+    """A function to handle general api requests
+    """
     
