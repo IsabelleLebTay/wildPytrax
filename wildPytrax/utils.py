@@ -3,6 +3,9 @@
 import requests
 import os
 import datetime as dt
+import platform
+import sys
+from urllib.parse import urljoin
 
 def _wt_authorization():
     """Wildtrax access token
@@ -39,7 +42,19 @@ def _wt_authorization():
     return token_details
 
 
-def _wt_api_general():
+def _wt_api_general(path, payload):
     """A function to handle general api requests
     """
+    # get the auth token
+    token = _wt_authorization()['access_token']
+    user_agent = "Python/{} ({}; {} {})".format(
+      platform.python_version(),
+      platform.system(),
+      platform.machine(),
+      platform.version()
+      )
+
+    head = {'Authorization': f"Bearer {token}", 'User-Agent':user_agent}
+    request = requests.post(url=urljoin("https://www-api.wildtrax.ca", '/bis/get-download-summary'), data=payload, headers = head)
+    return request.json()
     
