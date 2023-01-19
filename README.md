@@ -25,3 +25,4 @@ pip install wildPytrax
 
 
 ### Author
+Isabelle Lebeuf-Taylor
