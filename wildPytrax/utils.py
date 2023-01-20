@@ -9,6 +9,12 @@ from urllib.parse import urljoin
 
 def _wt_authorization():
     """Wildtrax access token
+    >> Consider making this a Class, where an object is created at teh start of a session. The object includes the access token and can be called without creating it again.
+    Object attributes: 
+    - time at creation, time when token expires
+    - user agent
+    
+    >> A method to reset the token when/if it expires. Without being called by the user? 
 
     """
 
