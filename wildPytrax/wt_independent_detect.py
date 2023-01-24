@@ -1,9 +1,11 @@
-def wt_indent_detect(x, threshold, units = "minutes",  datetime_col = date_detected, remove_human = True, remove_domestic = True):
+import pandas as pd
+
+def wt_indent_detect(df, threshold, units = "minutes",  datetime_col = date_detected, remove_human = True, remove_domestic = True):
      """Evaluate independent detections in your camera data
 
     Params:
     ------
-    x: A dataframe of camera data; preferably, the output of `wt_download_report()`.
+    df: A dataframe of camera data; preferably, the output of `wt_download_report()`.
     threshold: int; time interval to parse out independent detections.
     units: string; The threshold unit. Can be one of three values, "seconds", "minutes", "hours".
     datetime_col: Defaults to `date_detected`; The column indicating the timestamp of the image.
@@ -15,4 +17,11 @@ def wt_indent_detect(x, threshold, units = "minutes",  datetime_col = date_detec
     >>> Create independent detections dataframe using camera data from WildTrax
 
     """   
+        # stop if x is not a dataframe
+     if type(df) != pd.core.frame.DataFrame:
+          print("The first argument must supply a dataframe.")
+          return
+
+       
+     return
     
